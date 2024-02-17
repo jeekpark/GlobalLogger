@@ -22,7 +22,7 @@
 ## Getting Started
 ### Prerequisites
 - C++ 컴파일러(C++98 이상)
-- POSIX 호환 시스템 (unistd.h 및 sys/stat.h 사용)
+- POSIX 호환 시스템 (unistd.h, sys/stat.h, pthread.h 사용)
 
 ### Installation
 이 로거는 별도의 설치 과정이 필요 없습니다. 소스 코드를 프로젝트에 포함시키기만 하면 됩니다.
@@ -43,14 +43,14 @@ git submodule add git@github.com:jeekpark/LogManager.git
 
 int main() {
     // 옵션: 콘솔에 출력될 로그 레벨 설정, 기본값은 Notice
-    SET_CONSOLE_LEVEL(LogManager::Debug);
+    SET_CONSOLE_LEVEL(LogLevel::Debug);
     // 옵션: 파일에 출력될 로그 레벨 설정, 기본값은 Informational
-    SET_FILE_LEVEL(LogManager::Warning);
+    SET_FILE_LEVEL(LogLevel::Warning);
 
     int num = 7;
     // 로그 기록
-    LOG(LogManager::Debug) << "디버그 메시지 num =" << num;
-    LOG(LogManager::Error) << "에러 메시지";
+    LOG(LogLevel::Debug) << "디버그 메시지 num =" << num;
+    LOG(LogLevel::Error) << "에러 메시지";
 
     return 0;
 }
