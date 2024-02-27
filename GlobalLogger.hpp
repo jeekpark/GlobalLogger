@@ -11,15 +11,12 @@
 
 #pragma once
 
-#include <fstream>
 #include <sstream>
+#include <iomanip>
 #include <ctime>
-#include <iostream>
 #include <vector>
 #include <unistd.h>
-#include <sys/stat.h>
 #include <pthread.h>
-#include <string.h>
 
 #if !defined(__clang__) && !defined(__GNUC__)
     #define __PRETTY_FUNCTION__ __FUNCTION__
