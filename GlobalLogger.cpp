@@ -54,7 +54,7 @@ void GlobalLogger::Log(eSeverityLevel level, const std::string& message,
     std::string toWriteString = ss.str();
     if (bIsStringTarget)
     {
-        *mStringTarget = toWriteString;
+        *mStringTarget += toWriteString;
     }
     else
     {
